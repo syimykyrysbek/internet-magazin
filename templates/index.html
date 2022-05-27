@@ -1,0 +1,113 @@
+{% extends 'base2.html' %}
+{% block title %} Интернет магазин {% endblock title %}
+
+
+{% block content %}
+
+<h1 align="center">Свадебные Одежды</h1>
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img  height="500" src="https://style4man.com/wp-content/uploads/2019/03/O1FaCz2Gut0_06a94c9c408b70275eaa4c65cd176087_1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img height="500" src="https://bazar-msk.ru/wp-content/uploads/2016/10/ft9h35fh.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img height="500" src="https://avatars.mds.yandex.net/get-altay/2752367/2a0000017444c0bbe8357ba8149204abcdb1/XXL" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img height="500" src="https://www.wedby.me/uploads/category/image_in_catalog/34/f863abfb-4ab4-48f8-8e2d-a47dceb5aa75.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
+<div class="container marketing">
+
+  
+
+
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette" id="suit">
+    <div class="col-md-7">
+      <h2 align="center" class="featurette-heading">Костюмы. <span class="text-muted"></span></h2>
+      <p align="center" class="lead">Самые лучшие кастюмы только у нас.<br>С лучшими ценами.</p>
+      <p align="center"><a class="btn btn-secondary" href="{% url 'suit' %}">Смотрет</a></p>
+    </div>
+    <div class="col-md-5">
+      <img height="500" width="500" src="https://lh3.googleusercontent.com/FEE7O_Z4az4PeI262d56_tXeP2OQwjNudM0XhPOGYmUS3pGcEYdkRj5LkKpy1SnWpnTYGZ8Ld5dour4G63cYCCg=w512-h641-l80-e31" alt="">
+
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette" id="wed">
+    <div class="col-md-7 order-md-2">
+      <h2 align="center" class="featurette-heading">Свадебные платье. <span class="text-muted"></span></h2>
+      <p align="center" class="lead">Самые лучшие свадебные платье только у нас.<br>С хорошими ценами</p>
+      <p align="center"><a class="btn btn-secondary" href="https://lasposa.kg/dresses">Смотрет</a></p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img height="500" width="500" src="https://nevestam.by/thumbs/c29cd7a15fe594958e3d06c4d6753b97_1080_1080.jpg" alt="">
+
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette" id="shoes">
+    <div class="col-md-7">
+      <h2 align="center" class="featurette-heading">Мужские и Женские туфли <span class="text-muted"></span></h2>
+      <p align="center" class="lead">Самые хорошие мужские и женские свадебные туфли только унас.<br>С отличными цегами</p>
+      <p align="center"><a class="btn btn-secondary" href="http://toot.kg/">Смотрет</a></p>
+    </div>
+    <div class="col-md-5">
+      <img height="500" width="500" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBUnGaqZ2ssxbZWnVHbTScZwqPy28KKzbtmw&usqp=CAU" alt="">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+</div>
+
+    <h4 align="center">CONTACT US</h4>
+    <form action="sendContact/" method="POST">
+      {% csrf_token %}
+    <table class="table table-responsive d-table" id="contact">
+      <tr>
+        <td><input name="name" type="text" class="form-control pl-0" placeholder="NAME" /></td>
+        <td><input name="email" type="email" class="form-control pl-0" placeholder="EMAIL" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input name="address" type="text" class="form-control pl-0" placeholder="ADDRESS" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input name="message" type="text" class="form-control pl-0" placeholder="MESSAGES" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="text-center pl-0"><button type="submit" class="btn btn-dark">SEND</button></td>
+      </tr>
+    </table>
+  </form>
+  {% endblock content %}
