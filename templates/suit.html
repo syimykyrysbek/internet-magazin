@@ -28,18 +28,35 @@
     </button>
   </div>
 
+<!-- {{ products }}
 
+{% for i in products %}
+  <p>{{ i.name }}</p>
+  <p>{{ i.price }}</p>
+  <p>{ i.category }}</p>
+  <p>{{ i.description }}</p>
+  <img src="{{ i.image.url }}" alt="">
+{% endfor %} -->
 
   <div class="container"></div>
   <h1 class="text-center mt-5 md-5">Костюмы</h1>
+
+  
+ 
+{% for i in products %}
+  <div class="a"> 
   <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="{{ i.image.url }}" class="card-img-top" alt="img">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">{{ i.name }}</h5>
+      <p class="card-text">{{ i.description }}</p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
+  
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}
 

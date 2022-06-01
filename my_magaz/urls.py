@@ -13,13 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path
-from main.views import homepage3,homepage,homepage2,suit
+from main.views import homepage3,homepage2,suit,cart
+from my_magaz.settings import MEDIA_URL, MEDIA_ROOT
+from django.conf.urls.static import static
 urlpatterns = [
     path('base2', homepage3, name='base'),
-    path('base', homepage, name='base'),
-    path('', homepage2, name='index'),
+    path('', homepage2, name='homepage2'),
     path('suit', suit, name='suit'),
+    path('cart', cart, name='cart'),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
+

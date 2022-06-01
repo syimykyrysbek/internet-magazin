@@ -10,9 +10,11 @@
     <div class="carousel-item active">
       <img  height="500" src="https://style4man.com/wp-content/uploads/2019/03/O1FaCz2Gut0_06a94c9c408b70275eaa4c65cd176087_1.jpg" class="d-block w-100" alt="...">
     </div>
+
     <div class="carousel-item">
       <img height="500" src="https://bazar-msk.ru/wp-content/uploads/2016/10/ft9h35fh.jpg" class="d-block w-100" alt="...">
     </div>
+
     <div class="carousel-item">
       <img height="500" src="https://avatars.mds.yandex.net/get-altay/2752367/2a0000017444c0bbe8357ba8149204abcdb1/XXL" class="d-block w-100" alt="...">
     </div>
@@ -30,18 +32,19 @@
   </button>
 </div>
 <br>
+{{ productss }}
 <div class="container marketing">
 
-  
 
 
   <!-- START THE FEATURETTES -->
 
   <hr class="featurette-divider">
-
+  {% if count_category >= 2 %}
+  {% for i in categoiess %}
   <div class="row featurette" id="suit">
     <div class="col-md-7">
-      <h2 align="center" class="featurette-heading">Костюмы. <span class="text-muted"></span></h2>
+      <h2 align="center" class="featurette-heading">{{ i.name }} <span class="text-muted"></span></h2>
       <p align="center" class="lead">Самые лучшие кастюмы только у нас.<br>С лучшими ценами.</p>
       <p align="center"><a class="btn btn-secondary" href="{% url 'suit' %}">Смотрет</a></p>
     </div>
@@ -67,19 +70,8 @@
 
   <hr class="featurette-divider">
 
-  <div class="row featurette" id="shoes">
-    <div class="col-md-7">
-      <h2 align="center" class="featurette-heading">Мужские и Женские туфли <span class="text-muted"></span></h2>
-      <p align="center" class="lead">Самые хорошие мужские и женские свадебные туфли только унас.<br>С отличными цегами</p>
-      <p align="center"><a class="btn btn-secondary" href="http://toot.kg/">Смотрет</a></p>
-    </div>
-    <div class="col-md-5">
-      <img height="500" width="500" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBUnGaqZ2ssxbZWnVHbTScZwqPy28KKzbtmw&usqp=CAU" alt="">
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
+  {% endfor %}
+{% endif %}
 </div>
 
     <h4 align="center">CONTACT US</h4>

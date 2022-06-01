@@ -1,31 +1,27 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from main.models import Contact
+from main.models import Category, Product
 
 def homepage3(request):
     return render(request, 'base2.html')
 
 # Create your views here.
-def homepage(request):
-    return render(request, 'base.html')
 
 def homepage2(request):
-    return render(request, 'index.html')
+    productss = Product.objects.all()
+    categoiess = Category.objects.all()
+    count_cat = categoiess.count()
+    print(count_cat)
+    return render(request, 'index.html', {'productss':productss, 'categoiess':categoiess, 'count_category':count_cat})
 
 def suit(request):
+    products = Product.objects.all()
+    categoies = Category.objects.all()
     title = 'Костюмы'
-    return render(request, 'suit.html', {'title':title})
+    return render(request, 'suit.html', {'title':title, 'products':products, 'caetgori':categoies})
 
 
-def sendContact(request):
-    if request.method == 'POST':
-        contact = Contact()
-        contact.adress = request.POST.get('adress')
-        contact.number= request.POST.get('number')
-        contact.message = request.POST.get('message')
-        contact.save()
-
-        return HttpResponseRedirect('/')
+def cart(request):
+    return render(request, 'cart.html')
 
 
 
